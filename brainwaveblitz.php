@@ -9,7 +9,7 @@ use clearwebconcepts\ErrorHandler;
 
 
 /*
- * Brainwave Blitz 2.0 βeta
+ * Brainwave Blitz 2.0
  * Created by John Pepp
  * on June 30, 2023
  * Updated by John Pepp
