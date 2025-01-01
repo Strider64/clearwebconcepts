@@ -1,0 +1,480 @@
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* or the height you prefer */
+}
+
+
+#logout {
+    display: none;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); /* Drop shadow */
+    transition: background-color 0.5s ease; /* Color transition */
+    padding: 15px 32px;
+    margin: auto;
+}
+
+#logout:hover {
+    background-color: #45a049; /* Darker green */
+}
+
+/* Navigational CSS 9/30/2022 */
+.nav {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #4b81f8;
+    margin: 0 auto;
+}
+
+.nav-title {
+    display: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.2em;
+    color: #efefef;
+    padding-left: 0.625em; }
+
+.name-website {
+    display: block;
+    /* show website name on larger screens */ }
+
+.name-website .webtitle {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.8em;
+    color: #4b81f8; }
+
+.nav > .nav-btn {
+    display: none; }
+
+/* Updated Hamburger Menu CSS */
+.nav > .nav-btn > label {
+    display: inline-block;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    color: #4b81f8;
+    /* New color for the hamburger */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    /* New shadow for the hamburger */
+    transition: transform 0.5s ease-in-out;
+    /* Added for animation */ }
+
+.nav > .nav-btn:hover > label {
+    transform: scale(1.1);
+    /* New hover effect for the hamburger */ }
+
+.nav > .nav-btn > label > span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    background-color: #4b81f8;
+    /* New color for the hamburger lines */
+    margin: 6px 0; }
+
+.nav > .nav-btn > label::after {
+    content: 'Menu';
+    /* New label for the hamburger */
+    font-size: 14px;
+    position: absolute;
+    top: 60px;
+    /* Position of the new label */
+    right: -10px;
+    /* Position of the new label */ }
+
+.nav > .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; }
+
+.nav > .nav-links > a {
+    line-height: 1.875em;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #4b81f8;
+    padding: 0.313em 0.625em; }
+
+.nav > .nav-links > a:hover {
+    color: #4d4d4d; }
+
+.nav > #nav-check {
+    display: none; }
+
+/* Navigation CSS Media Query */
+@media screen and (max-width: 600px) {
+    .nav {
+        padding-bottom: 0; }
+
+    .name-website {
+        display: none;
+        /* hide website name on smaller screens */ }
+
+    .nav > .nav-btn {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 10000; }
+
+    .nav > .nav-links {
+        position: absolute;
+        display: none;
+        width: 100%;
+        z-index: 30000;
+        background-color: #333;
+        top: 50px;
+        left: 0; }
+
+    .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+        color: #fff; }
+
+    .nav .nav-btn:checked ~ .nav-links {
+        display: block; } }
+
+/* Category Selection CSS */
+#categorySelector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2em;
+    width: 90%;  /* Add this */
+    margin: 1em auto; /* Center the container */
+}
+
+#categorySelector label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+#category {
+    width: 100%;
+    max-width: 15.75em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    background-color: #fff;
+    font-size: 1em;
+    color: #333;
+}
+
+#category:focus {
+    outline: none;
+    border-color: #668cff;
+    box-shadow: 0 0 5px 1px #668cff;
+}
+
+/* Use a media query to adjust the styles for screens that are 600px wide or smaller */
+@media (max-width: 600px) {
+    #categorySelector {
+        width: 80%; /* Increase the width */
+        font-size: 1em; /* Decrease the font size */
+    }
+    #category {
+        max-width: none; /* Allow the select box to take the full width */
+    }
+}
+
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+}
+
+#quiz {
+    width: 100%;
+    max-width: 37.5em; /* 600px / 16px (base font-size) */
+
+    border-radius: 0.3125em;
+    padding: 0.625em;
+}
+
+.triviaContainer {
+    text-align: center;
+}
+
+#mainGame {
+    margin-top: 1.25em;
+}
+
+.info-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* changed to space-around for equal spacing */
+    align-items: center; /* to vertically align text */
+    background-color: #4caf50;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
+    padding: 1em;
+    margin-bottom: 1.250em;
+}
+
+.info-bar p {
+    color: white;
+    margin: 0;
+    font-size: 1em; /* adjust as per preference */
+}
+
+.info-bar #currentQuestion,
+.info-bar #score {
+    font-weight: bold;
+}
+
+.image-header {
+    /* Centers the image if the .image-header div is bigger than the image. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Box Shadow: horizontal offset, vertical offset, blur radius, spread radius, color. */
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2); /* Customize this as needed. */
+    transition: transform 0.3s ease-in-out; /* For a smooth scaling effect when hovered. */
+}
+
+.image-header img {
+    /* Makes the image responsive. The image will take up 100% of its container's width and adjust its height to maintain its aspect ratio. */
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures that the aspect ratio of the image is preserved. */
+}
+
+.image-header:hover {
+    /* Scales up the div and its image when hovered. */
+    transform: scale(1.05);
+}
+
+/* Media Query for Mobile Screens */
+@media screen and (max-width: 30em) {
+    .image-header img {
+        width: 100%;
+    }
+    .info-bar {
+        flex-direction: column;
+        text-align: center;
+        padding: 1em 0; /* less padding horizontally for mobile view */
+    }
+}
+
+#currentQuestion,
+#score {
+    font-weight: bold;
+}
+
+#question {
+    font-size: 1.5em;
+    color: #338b37;
+    margin-bottom: 1.25em;
+}
+
+.buttonStyle {
+    background-color: #4caf50; /* green */
+    color: white;
+    border: none;
+    padding: 0.625em;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 0.3125em;
+    width: 100%;
+    margin-bottom: 0.625em;
+}
+
+.buttonStyle:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50;
+}
+
+.nextBtn {
+    display: inline-block;
+    float: right;
+    border: none;
+    background-color: #4caf50; /* green */
+    font-size: 1em;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 0.3125em;
+    padding: 0.625em 1em;
+}
+
+.nextBtn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50;
+}
+
+@media (min-width: 48em) {
+    /* Brain Wave Blitz CSS */
+    .main {
+        padding: 2em;
+    }
+
+    #quiz {
+        padding: 2em;
+    }
+
+    #current {
+        font-size: 1.5em;
+    }
+
+    #question {
+        font-size: 2em;
+    }
+
+    .buttonStyle {
+        font-size: 1.125em;
+        padding: 0.75em;
+        transition-duration: 0.4s;
+    }
+
+    .nextBtn {
+        font-size: 1.125em;
+        padding: 0.75em 1.5em;
+        transition-duration: 0.4s;
+    }
+
+
+    /* Vertical Navigation */
+    .admin-navigation {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        background-color: #f1f1f1;
+        padding: 8px;
+        margin-bottom: 10px;
+        border-radius: 4px; }
+
+    .admin-navigation a {
+        text-decoration: none;
+        color: #000;
+        padding: 8px;
+        margin-bottom: 6px;
+        border-radius: 4px; }
+
+    .admin-navigation a:hover {
+        background-color: #ddd; }
+
+
+    /* Container for the form */
+    .login_style {
+        width: 400px;
+        margin: 100px auto;
+        padding: 30px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+        font-family: Arial, sans-serif; }
+
+    /* Style labels */
+    .text_username,
+    .text_password {
+        display: block;
+        margin-bottom: 5px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333; }
+
+    /* Style input fields */
+    .io_username,
+    .io_password {
+        width: 94%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 16px;
+        font-family: Arial, sans-serif; }
+
+    /* Style input fields on focus */
+    .io_username:focus,
+    .io_password:focus {
+        border-color: #0b79f7;
+        outline: none; }
+
+    /* Style submit button */
+    .submitBtn {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background-color: #0b79f7;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s; }
+
+    /* Footer Style */
+    .colophon p {
+        color: #4b81f8;
+        text-align: center;
+    }
+
+}

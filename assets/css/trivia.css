@@ -1,0 +1,431 @@
+/*--------------------------------------------------------------
+CSS Reset
+--------------------------------------------------------------*/
+html {
+  font-family: sans-serif; }
+
+body {
+  margin: 0; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background-color: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  display: block;
+  border: 0;
+  width: 100%;
+  height: auto; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="search"] {
+  box-sizing: content-box; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/* Navigational SCSS */
+.nav {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #4b81f8;
+  margin: 0 auto; }
+  .nav-title {
+    display: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.2em;
+    color: #efefef;
+    padding-left: 0.625em; }
+  .nav .name-website {
+    display: block; }
+    .nav .name-website .webtitle {
+      font-family: 'Shadows Into Light', cursive;
+      font-size: 1.8em;
+      color: #4b81f8; }
+  .nav > .nav-btn {
+    display: none; }
+    .nav > .nav-btn > label {
+      display: inline-block;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+      color: #4b81f8;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      transition: transform 0.5s ease-in-out; }
+      .nav > .nav-btn > label:hover {
+        transform: scale(1.1); }
+      .nav > .nav-btn > label > span {
+        display: block;
+        width: 35px;
+        height: 5px;
+        background-color: #4b81f8;
+        margin: 6px 0; }
+      .nav > .nav-btn > label::after {
+        content: 'Menu';
+        font-size: 14px;
+        position: absolute;
+        top: 60px;
+        right: -10px; }
+  .nav > .nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; }
+    .nav > .nav-links > a {
+      line-height: 1.875em;
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #4b81f8;
+      padding: 0.313em 0.625em; }
+      .nav > .nav-links > a:hover {
+        color: #4d4d4d; }
+  .nav > #nav-check {
+    display: none; }
+
+/* Navigation SCSS Media Query */
+@media screen and (max-width: 600px) {
+  .nav {
+    padding-bottom: 0; }
+    .nav .name-website {
+      display: none; }
+    .nav > .nav-btn {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 10000; }
+    .nav > .nav-links {
+      position: absolute;
+      display: none;
+      width: 100%;
+      z-index: 30000;
+      background-color: #333;
+      top: 50px;
+      left: 0; }
+      .nav > .nav-links > a {
+        display: block;
+        width: 100%;
+        color: #fff; }
+    .nav .nav-btn:checked ~ .nav-links {
+      display: block; } }
+/* Category Selection SCSS */
+#categorySelector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+  width: 90%;
+  margin: 1em auto; }
+  #categorySelector label {
+    margin-bottom: 0.5em;
+    font-weight: bold; }
+
+#category {
+  width: 100%;
+  max-width: 15.75em;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  background-color: #fff;
+  font-size: 1em;
+  color: #333; }
+  #category:focus {
+    outline: none;
+    border-color: #668cff;
+    box-shadow: 0 0 5px 1px #668cff; }
+
+/* Use a media query to adjust the styles for screens that are 600px wide or smaller */
+@media (max-width: 600px) {
+  #categorySelector {
+    width: 80%;
+    font-size: 1em; }
+
+  #category {
+    max-width: none; } }
+/* Main Styles */
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em; }
+  @media (min-width: 48em) {
+    .main {
+      padding: 2em; } }
+
+#quiz {
+  width: 100%;
+  max-width: 37.5em;
+  border-radius: 0.3125em;
+  padding: 0.625em; }
+  @media (min-width: 48em) {
+    #quiz {
+      padding: 2em; } }
+
+.triviaContainer {
+  text-align: center; }
+
+#mainGame {
+  margin-top: 1.25em; }
+
+.info-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #4caf50;
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
+  padding: 1em;
+  margin-bottom: 1.250em; }
+  @media (max-width: 30em) {
+    .info-bar {
+      flex-direction: column;
+      text-align: center;
+      padding: 1em 0; } }
+  .info-bar p {
+    color: white;
+    margin: 0;
+    font-size: 1em; }
+  .info-bar #currentQuestion,
+  .info-bar #score {
+    font-weight: bold; }
+
+.image-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out; }
+  .image-header img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; }
+    @media (max-width: 30em) {
+      .image-header img {
+        width: 100%; } }
+  .image-header:hover {
+    transform: scale(1.05); }
+
+#currentQuestion,
+#score {
+  font-weight: bold; }
+
+#question {
+  font-size: 1.5em;
+  color: #338b37;
+  margin-bottom: 1.25em; }
+  @media (min-width: 48em) {
+    #question {
+      font-size: 2em; } }
+
+.buttonStyle {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.625em;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 0.3125em;
+  width: 100%;
+  margin-bottom: 0.625em; }
+  @media (min-width: 48em) {
+    .buttonStyle {
+      font-size: 1.125em;
+      padding: 0.75em; } }
+  .buttonStyle:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50; }
+
+.nextBtn {
+  display: inline-block;
+  float: right;
+  border: none;
+  background-color: #4caf50;
+  font-size: 1em;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 0.3125em;
+  padding: 0.625em 1em; }
+  @media (min-width: 48em) {
+    .nextBtn {
+      font-size: 1.125em;
+      padding: 0.75em 1.5em; } }
+  .nextBtn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4caf50; }
+
+#result {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  border-radius: 0.25em;
+  box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.5s; }
+  #result.hidden {
+    opacity: 0; }
+  #result.success {
+    background-color: #c6efce;
+    color: #3e8e41; }
+  #result.error {
+    background-color: #ffc6c6;
+    color: #8e3e3e; }
+  #result:not(.hidden) {
+    opacity: 1; }
+
+/*# sourceMappingURL=trivia.css.map */
