@@ -7,7 +7,6 @@ require_once "vendor/autoload.php";
 use clearwebconcepts\Database;
 use clearwebconcepts\ErrorHandler;
 
-
 /*
  * Brainwave Blitz 2.0
  * Created by John Pepp
